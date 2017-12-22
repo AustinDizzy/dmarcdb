@@ -1,0 +1,1 @@
+select count(*), pg_size_pretty(pg_database_size('dmarcdb')) as dbsize, to_timestamp(min(records.date_range_begin)) from records;
