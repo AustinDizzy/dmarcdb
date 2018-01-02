@@ -1,4 +1,4 @@
 *.exe
 *.db
 *.lock
-*.yml
+config.yml

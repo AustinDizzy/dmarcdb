@@ -1,0 +1,14 @@
+database: postgres://postgres:hunter2@192.168.1.3/dmarcdb # required, database URI per RFC 3986
+mailFolder: Information Security/Cabinet/DMARC-DKIM Logs # required, folder path to traverse
+geocitydb: C:\GeoLite2-City.mmdb # location of GeoLite2 city database (default: ./GeoLite2-City.mmdb)
+geoasndb: C:\GeoLite2-ASN.mmdb # location of GeoLite2 ASN database (default: ./GeoLite2-ASN.mmdb)
+environment: prod # operating environment (default: "prod")
+# when set to "dev", maximizes logging and minimizes mass record processing
+duplicates: false # if true, inserts already processed records (default: false)
+cacheHosts: true # if true, uses boltdb for a local cache of hostname lookups
+dns: dns.wvu.edu # dns server to use for hostname lookup (default: system network default)
+web: false # enables/disables web interface (default: false)
+port: 8080 # port for web server to listen on (default: 8080)
+templates: ./templates # folder in which to look for HTML page templates (default: ./templates)
+stopOnError: false # should program halt on first report processing error (default: false)
+# when set to false, DMARC reports which error on opening are logged in a boltdb backed "fail log"
