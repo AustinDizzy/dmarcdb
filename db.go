@@ -33,7 +33,7 @@ func (report *DMARCFeedback) store() error {
 	switch strings.Split(viper.GetString("database"), "://")[0] {
 	case "postgres":
 		query = pq.CopyIn("records", cols...)
-	case "mssql":
+	default:
 		opts := mssql.MssqlBulkOptions{}
 		query = mssql.CopyIn("records", opts, cols...)
 	}

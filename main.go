@@ -73,7 +73,7 @@ func dbConnect() error {
 
 	var proto = strings.Split(viper.GetString("database"), "://")[0]
 	switch proto {
-	case "postgres", "mssql":
+	case "postgres":
 		db, err = sql.Open(proto, viper.GetString("database"))
 	default:
 		db, err = sql.Open("sqlserver", viper.GetString("database"))
