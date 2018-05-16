@@ -69,7 +69,7 @@ func openAttachment(attachment *ole.IDispatch) (io.Reader, error) {
 	}
 
 	// unarchive the attachment in the respective way (if required)
-	if strings.HasSuffix(filename, ".xml.gz") {
+	if strings.HasSuffix(filename, ".xml.gz") || strings.HasSuffix(filename, ".gzip") {
 		// file is simple XML gzip'd
 		att, err := os.Open(saveTo)
 		if err != nil {
