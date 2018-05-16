@@ -2,3 +2,4 @@
 *.db
 *.lock
 config.yml
+.vscode/
